@@ -7,10 +7,10 @@ export interface SearchResponse {
     totalResults: number
     resultsPerPage: number
   }
-  items: Item[]
+  items: SearchItem[]
 }
 
-export interface Item {
+export interface SearchItem {
   kind: string
   etag: string
   id: {
@@ -18,11 +18,11 @@ export interface Item {
     channelId?: string
     videoId?: string
   }
-  snippet: Snippet
+  snippet: SearchSnippet
 }
 
 
-export interface Snippet {
+export interface SearchSnippet {
   publishedAt: string
   channelId: string
   title: string
@@ -39,4 +39,39 @@ export interface ThumbnailContents {
   url: string
   width?: number
   height?: number
+}
+
+export interface VideoResponse {
+  kind: string
+  etag: string
+  items: VideoItem[]
+  pageInfo: PageInfo
+}
+
+export interface VideoItem {
+  kind: string
+  etag: string
+  id: string
+  statistics: VideoStatistics
+}
+
+export interface VideoStatistics {
+  viewCount: string
+  likeCount?: string
+  favoriteCount: string
+  commentCount: string
+}
+
+export interface PageInfo {
+  totalResults: number
+  resultsPerPage: number
+}
+
+
+export interface ModifiedSearchResponse extends SearchResponse {
+  items: ModifiedItem[]
+}
+
+export interface ModifiedItem extends SearchItem{
+  commentCount?: string
 }
