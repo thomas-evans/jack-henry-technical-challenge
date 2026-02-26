@@ -11,6 +11,7 @@
     "test:browser": "vitest --config=vitest.browser.config.ts"
   },
   "dependencies": {
+    "@jack-henry/jh-elements": "^2.0.0-beta.8",
     "@lit/task": "^1.0.3",
     "lit": "^3.3.1"
   },

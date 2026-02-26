@@ -3,7 +3,10 @@ import {Task} from "@lit/task";
 import {customElement} from "lit/decorators/custom-element.js";
 import type {SearchResponse} from "./types.ts";
 import { property } from "lit/decorators.js";
+import { setJhTheme } from '@jack-henry/jh-elements/utils/themeProvider.js';
+import '@jack-henry/jh-elements/components/button/button.js';
 
+setJhTheme();
 
 @customElement('yt-data')
 export class YTData extends LitElement {
@@ -24,7 +27,7 @@ export class YTData extends LitElement {
 
   render() {
     return html`
-        <button @click=${this._onClick}>Search YouTube</button>
+        <jh-button @click=${this._onClick} appearance="primary" label="Search YouTube"></jh-button>
     `;
   }
 
