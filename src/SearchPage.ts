@@ -159,6 +159,11 @@ export class SearchPage extends LitElement {
     `;
   }
 
+  sortTemplate(){
+  //   todo create button list or something like it for sort terms
+  //   todo rework resultstemplate to use a state value, so it can be sorted without triggering another call
+  }
+
   render() {
     return html`
         <main>
