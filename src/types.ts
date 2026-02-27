@@ -37,8 +37,8 @@ type Thumbnail = "default" | "medium" | "high";
 
 export interface ThumbnailContents {
   url: string
-  width?: number
-  height?: number
+  width: number
+  height: number
 }
 
 export interface VideoResponse {
@@ -52,7 +52,7 @@ export interface VideoItem {
   kind: string
   etag: string
   id: string
-  statistics: VideoStatistics
+  statistics?: VideoStatistics
 }
 
 export interface VideoStatistics {
@@ -73,5 +73,14 @@ export interface ModifiedSearchResponse extends SearchResponse {
 }
 
 export interface ModifiedItem extends SearchItem{
-  commentCount?: string
+  statistics?: VideoStatistics
+  relevanceIndex: number
 }
+
+export const sortTypes = {
+  relevance: 1,
+  date: 2,
+  rating: 3
+} as const;
+
+export type SortTypes = typeof sortTypes[keyof typeof sortTypes];

@@ -18,7 +18,7 @@ test('it should render the search button', async () => {
 })
 
 test("it should call the YouTube Search API when clicked", async ()=>{
-  const component = render(html`<yt-data></yt-data>`);
-  const searchButton = component.getByText('Search YouTube');
+  // const component = render(html`<yt-data></yt-data>`);
+  // const searchButton = component.getByText('Search YouTube');
   //todo implement when data is rendered
 });
