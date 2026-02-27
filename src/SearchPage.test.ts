@@ -1,11 +1,11 @@
 import { assert, expect, test } from 'vitest'
-import {YTData} from "./YTData.ts";
+import {SearchPage} from "./SearchPage.ts";
 import {render} from "vitest-browser-lit";
 import {html} from "lit";
 
 
 test("it should have default class properties", ()=>{
-  const dataComponent = new YTData;
+  const dataComponent = new SearchPage;
   expect(dataComponent.maxResults).toEqual(25);
   assert.isEmpty(dataComponent.query);
   expect(dataComponent.apiKey).toEqual(import.meta.env.VITE_YOUTUBE_API_KEY);
