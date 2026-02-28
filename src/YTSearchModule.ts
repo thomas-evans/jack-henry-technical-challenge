@@ -122,7 +122,6 @@ export class YTSearchModule extends LitElement {
     }
 
     private recordBookmark(item: ModifiedItem) {
-        console.log(item);
         const lsBookmarks = localStorage.getItem("bookmarks");
         if (lsBookmarks !== null) {
             const updatedBookmarks: ModifiedItem[] = JSON.parse(lsBookmarks);
