@@ -1,5 +1,5 @@
 import {customElement} from "lit/decorators/custom-element.js";
-import {html, LitElement} from "lit";
+import {css, html, LitElement} from "lit";
 import type {ModifiedSearchResponse, SortTypes} from "./types.ts";
 import {state} from "lit/decorators.js";
 import {consume} from "@lit/context";
@@ -13,8 +13,16 @@ import '@jack-henry/jh-icons/icons-wc/icon-arrow-up-small.js';
 export class SortResults extends LitElement{
   @state() currentSort: SortTypes = 1;
   @state() descendingOrder: boolean = true;
-  @consume({context: resultsContext})
+
+  @consume({context: resultsContext, subscribe: true})
   results: ModifiedSearchResponse | undefined;
+
+  static styles = css`
+    :host{
+      display: flex;
+      align-items: center;
+    }
+  `;
 
   private sortResults(e: Event) {
     const targetElement = e.target as HTMLElement;
@@ -54,29 +62,10 @@ export class SortResults extends LitElement{
         }
         break;
     }
-    console.log(this.results);
-    this.dispatchEvent(new CustomEvent<ModifiedSearchResponse|undefined>('sort', {detail: this.results}));
+    this.dispatchEvent(new CustomEvent('sort'));
   };
 
-  sortTemplate() {
-    return html`
-        <h2>Sort</h2>
-        <div @click=${this.sortResults}>
-            <jh-button name="sortByRelevance" appearance="tertiary" label="Relevance" size="small" icon-position="after"
-                       sortType="1">
-                ${this.sortOrderIconTemplate(1)}
-            </jh-button>
-            <jh-button name="sortByDate" appearance="tertiary" label="Date" size="small" icon-position="after"
-                       sortType="2">
-                ${this.sortOrderIconTemplate(2)}
-            </jh-button>
-            <jh-button name="sortByRating" appearance="tertiary" label="Rating" size="small" icon-position="after"
-                       sortType="3">
-                ${this.sortOrderIconTemplate(3)}
-            </jh-button>
-        </div>
-    `
-  }
+
 
   sortOrderIconTemplate(sortType: number) {
     // I added this span to prevent #handleSlotChange in
@@ -91,10 +80,22 @@ export class SortResults extends LitElement{
   }
 
   render() {
-    return html`
-        <section id="sort">
-            ${this.sortTemplate()}
-        </section>
+    return html`        
+        <h2>Sort Results</h2>
+        <div @click=${this.sortResults}>
+            <jh-button name="sortByRelevance" appearance="tertiary" label="Relevance" size="small" icon-position="after"
+                       sortType="1">
+                ${this.sortOrderIconTemplate(1)}
+            </jh-button>
+            <jh-button name="sortByDate" appearance="tertiary" label="Date" size="small" icon-position="after"
+                       sortType="2">
+                ${this.sortOrderIconTemplate(2)}
+            </jh-button>
+            <jh-button name="sortByRating" appearance="tertiary" label="Rating" size="small" icon-position="after"
+                       sortType="3">
+                ${this.sortOrderIconTemplate(3)}
+            </jh-button>
+        </div>
     `;
   }
 }

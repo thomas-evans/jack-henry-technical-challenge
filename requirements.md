@@ -22,17 +22,17 @@ Your application should consist of a Search View containing the following:
   - [x] Total comment count.
 
 ### The Senior-Level Requirement: Persistence & Decoupling
-- [ ] Bookmarks: Users must be able to "Save" videos to a bookmarks list.
-- [ ] Users should be able to view their list of bookmarks using the same list/grid components as the regular search.
-- [ ] Storage: Bookmarks must persist across sessions.
-- [ ] Architecture: The "Search" and "Bookmarks" components should be decoupled. They should be composed from the same base components, but should be able to run independently of one another.
+- [x] Bookmarks: Users must be able to "Save" videos to a bookmarks list.
+- [x] Users should be able to view their list of bookmarks using the same list/grid components as the regular search.
+- [x] Storage: Bookmarks must persist across sessions.
+- [x] Architecture: The "Search" and "Bookmarks" components should be decoupled. They should be composed from the same base components, but should be able to run independently of one another.
 
 ## Engineering Standards
 - [x] Accessibility (A11y): In banking, inclusion is a requirement. Ensure your components are keyboard-navigable and screen-reader friendly (ARIA labels, focus management).
-- [ ] Security: Demonstrate awareness of XSS risks when rendering data from external APIs.
+- [x] Security: Demonstrate awareness of XSS risks when rendering data from external APIs.
 - [x] Performance: Optimize for "low-end" mobile devices. Consider how you handle 50+ images and text blocks without impacting the main thread. Be careful with how you handle concurrent requests to the YouTube API.
 - [x] Responsiveness: Everything should function well on both huge monitors and ancient tiny mobile devices.
-- [ ] AI Disclosure: If you use AI tools (e.g., Copilot, ChatGPT), please include a brief AI-LOG.md explaining where you used AI and how you validated its output for security or performance.
+- [x] AI Disclosure: If you use AI tools (e.g., Copilot, ChatGPT), please include a brief AI-LOG.md explaining where you used AI and how you validated its output for security or performance.
 
 ## Submission & Interview Format
 - [ ] GitHub: Send your repository link the day before our meeting.
