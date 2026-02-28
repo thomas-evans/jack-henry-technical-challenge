@@ -1,29 +1,42 @@
 {
-  "name": "youtube-module",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "test": "vitest",
-    "test:browser": "vitest --config=vitest.browser.config.ts"
-  },
-  "dependencies": {
-    "@jack-henry/jh-elements": "^2.0.0-beta.8",
-    "@lit/context": "^1.1.6",
-    "@lit/task": "^1.0.3",
-    "lit": "^3.3.1"
-  },
-  "devDependencies": {
-    "@vitest/browser-playwright": "^4.0.18",
-    "typescript": "~5.9.3",
-    "vite": "^8.0.0-beta.13",
-    "vitest": "^4.0.18",
-    "vitest-browser-lit": "^1.0.1"
-  },
-  "overrides": {
-    "vite": "^8.0.0-beta.13"
-  }
+    "name": "youtube-module",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "test": "vitest",
+        "test:browser": "vitest --config=vitest.browser.config.ts",
+        "lint": "eslint \"**/*.{js,ts}\"",
+        "format": "prettier . --write"
+    },
+    "dependencies": {
+        "@jack-henry/jh-elements": "^2.0.0-beta.8",
+        "@lit/context": "^1.1.6",
+        "@lit/task": "^1.0.3",
+        "lit": "^3.3.1"
+    },
+    "devDependencies": {
+        "@eslint/css": "^0.14.1",
+        "@eslint/js": "^10.0.1",
+        "@vitest/browser-playwright": "^4.0.18",
+        "eslint": "^10.0.2",
+        "globals": "^17.3.0",
+        "jiti": "^2.6.1",
+        "prettier": "3.8.1",
+        "typescript": "~5.9.3",
+        "typescript-eslint": "^8.56.1",
+        "vite": "^8.0.0-beta.13",
+        "vitest": "^4.0.18",
+        "vitest-browser-lit": "^1.0.1"
+    },
+    "overrides": {
+        "vite": "^8.0.0-beta.13"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "printWidth": 100
+    }
 }
