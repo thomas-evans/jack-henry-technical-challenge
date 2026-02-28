@@ -84,3 +84,6 @@ export const sortTypes = {
 } as const;
 
 export type SortTypes = typeof sortTypes[keyof typeof sortTypes];
+
+export type SortEvent = CustomEvent<ModifiedSearchResponse|undefined>;
+export type FireSearchEvent = CustomEvent<[number, string, string, boolean]>;
