@@ -2,7 +2,7 @@ import { customElement } from "lit/decorators/custom-element.js";
 import { html, LitElement, nothing } from "lit";
 import "./SearchYT.ts";
 import { provide } from "@lit/context";
-import { resultsContext } from "./resultsContext.ts";
+import { resultsContext } from "./util/resultsContext.ts";
 import { state } from "lit/decorators.js";
 import type {
     FireSearchEvent,
@@ -11,7 +11,7 @@ import type {
     SearchResponse,
     VideoResponse,
     VideoStatistics,
-} from "./types.ts";
+} from "./util/types.ts";
 import { setJhTheme } from "@jack-henry/jh-elements/utils/themeProvider.js";
 import "@jack-henry/jh-elements/components/tooltip/tooltip.js";
 import "@jack-henry/jh-elements/components/button/button.js";
@@ -22,8 +22,8 @@ import "@jack-henry/jh-icons/icons-wc/icon-bookmark.js";
 import "@jack-henry/jh-elements/components/switch/switch.js";
 import "./SortResults.ts";
 import { Task, TaskStatus } from "@lit/task";
-import { mockSearch, mockVideoStats } from "./mockData.ts";
-import { sharedStyles } from "./sharedStyles.ts";
+import { mockSearch, mockVideoStats } from "./util/mockData.ts";
+import { sharedStyles } from "./util/sharedStyles.ts";
 
 setJhTheme();
 
@@ -238,12 +238,6 @@ export class YTSearchModule extends LitElement {
         `;
     }
 
-    clearAll() {
-        localStorage.clear();
-        this.bookmarks = [];
-        this.results = undefined;
-    }
-
     render() {
         return html`
             <main>
@@ -262,7 +256,6 @@ export class YTSearchModule extends LitElement {
                               <search-yt
                                   @fireSearch=${async (e: FireSearchEvent) =>
                                       await this._getYTSearchData.run(e.detail)}
-                                  @clearAll=${async () => this.clearAll()}
                               ></search-yt>
                           </section>
                           <section id="sort">

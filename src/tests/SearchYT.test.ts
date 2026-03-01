@@ -1,5 +1,5 @@
 import { assert, expect, test } from "vitest";
-import { SearchYT } from "./SearchYT.ts";
+import { SearchYT } from "../SearchYT.ts";
 import { render } from "vitest-browser-lit";
 import { html } from "lit";
 
