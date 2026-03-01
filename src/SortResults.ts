@@ -1,6 +1,6 @@
 import { customElement } from "lit/decorators/custom-element.js";
 import { css, html, LitElement } from "lit";
-import type { ModifiedSearchResponse, SortTypes } from "./types.ts";
+import type { ModifiedItem, ModifiedSearchResponse, SortTypes } from "./types.ts";
 import { state } from "lit/decorators.js";
 import { consume } from "@lit/context";
 import { resultsContext } from "./resultsContext.ts";
@@ -42,50 +42,20 @@ export class SortResults extends LitElement {
             this.descendingOrder = true;
         }
         this.currentSort = sortType;
-        switch (sortType) {
-            case 1:
-                if (this.descendingOrder) {
-                    this.results?.items.sort((a, b) => a.relevanceIndex - b.relevanceIndex);
-                } else {
-                    this.results?.items
-                        .sort((a, b) => a.relevanceIndex - b.relevanceIndex)
-                        .reverse();
-                }
-                break;
-            case 2:
-                if (this.descendingOrder) {
-                    this.results?.items
-                        .sort(
-                            (a, b) =>
-                                new Date(a.snippet.publishTime).valueOf() -
-                                new Date(b.snippet.publishTime).valueOf(),
-                        )
-                        .reverse();
-                } else {
-                    this.results?.items.sort(
-                        (a, b) =>
-                            new Date(a.snippet.publishTime).valueOf() -
-                            new Date(b.snippet.publishTime).valueOf(),
-                    );
-                }
-                break;
-            case 3:
-                if (this.descendingOrder) {
-                    this.results?.items
-                        .sort(
-                            (a, b) =>
-                                parseInt(a.statistics?.likeCount ?? "0") -
-                                parseInt(b.statistics?.likeCount ?? "0"),
-                        )
-                        .reverse();
-                } else {
-                    this.results?.items.sort(
-                        (a, b) =>
-                            parseInt(a.statistics?.likeCount ?? "0") -
-                            parseInt(b.statistics?.likeCount ?? "0"),
-                    );
-                }
-                break;
+
+        const comparators: Record<SortTypes, (a: ModifiedItem, b: ModifiedItem) => number> = {
+            1: (a, b) => a.relevanceIndex - b.relevanceIndex,
+            2: (a, b) =>
+                new Date(a.snippet.publishTime).valueOf() -
+                new Date(b.snippet.publishTime).valueOf(),
+            3: (a, b) =>
+                Number(a.statistics?.likeCount ?? "0") - Number(b.statistics?.likeCount ?? "0"),
+        };
+
+        const comparator = comparators[sortType];
+        if (comparator) {
+            this.results?.items.sort(comparator);
+            if (!this.descendingOrder) this.results?.items.reverse();
         }
         this.dispatchEvent(new CustomEvent("sort"));
     }
