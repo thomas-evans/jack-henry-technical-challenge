@@ -4,7 +4,7 @@ A Lit-based web component for searching YouTube videos.
 
 ## ADR Files
 
-ADR-state.md
+ADR-state.md\
 ADR_TSvsJS.md
 
 ## Installation
