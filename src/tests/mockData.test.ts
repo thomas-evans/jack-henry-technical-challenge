@@ -1,5 +1,5 @@
 import { expect, test, describe } from "vitest";
-import { mockSearch, mockVideoStats } from "./mockData.ts";
+import { mockSearch, mockVideoStats } from "../util/mockData.ts";
 
 describe("mockSearch", () => {
     test("should have valid kind", () => {

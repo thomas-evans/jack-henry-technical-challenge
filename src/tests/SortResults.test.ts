@@ -1,5 +1,5 @@
 import { expect, test, describe } from "vitest";
-import { SortResults } from "./SortResults.ts";
+import { SortResults } from "../SortResults.ts";
 import { render } from "vitest-browser-lit";
 import { html } from "lit";
 

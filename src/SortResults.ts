@@ -1,9 +1,9 @@
 import { customElement } from "lit/decorators/custom-element.js";
 import { css, html, LitElement } from "lit";
-import type { ModifiedItem, ModifiedSearchResponse, SortTypes } from "./types.ts";
+import type { ModifiedItem, ModifiedSearchResponse, SortTypes } from "./util/types.ts";
 import { state } from "lit/decorators.js";
 import { consume } from "@lit/context";
-import { resultsContext } from "./resultsContext.ts";
+import { resultsContext } from "./util/resultsContext.ts";
 import "@jack-henry/jh-elements/components/button/button.js";
 import "@jack-henry/jh-icons/icons-wc/icon-arrow-down-small.js";
 import "@jack-henry/jh-icons/icons-wc/icon-arrow-up-small.js";
