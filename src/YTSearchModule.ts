@@ -20,8 +20,6 @@ import "@jack-henry/jh-elements/components/tag/tag.js";
 import "@jack-henry/jh-elements/components/badge/badge.js";
 import "@jack-henry/jh-icons/icons-wc/icon-bookmark.js";
 import "@jack-henry/jh-elements/components/switch/switch.js";
-
-import "./SearchYT.ts";
 import "./SortResults.ts";
 import { Task, TaskStatus } from "@lit/task";
 import { mockSearch, mockVideoStats } from "./mockData.ts";
@@ -146,6 +144,7 @@ export class YTSearchModule extends LitElement {
     }
 
     private cardTemplate(item: ModifiedItem) {
+        const isBookmarked = this.isBookmarked(item.id.videoId);
         return html` <jh-card show-header-divider show-footer-divider padding="small">
             <div class="card-media" slot="jh-card-media">
                 <a
@@ -173,14 +172,12 @@ export class YTSearchModule extends LitElement {
             <div class="jh-card-footer" slot="jh-card-footer">
                 <jh-tooltip
                     position="top-right"
-                    label="${this.isBookmarked(item.id.videoId)
-                        ? "Remove Bookmark"
-                        : "Bookmark Video"}"
+                    label="${isBookmarked ? "Remove Bookmark" : "Bookmark Video"}"
                 >
                     <jh-button
                         accessible-label="Bookmark Video"
                         name="bookMark"
-                        appearance="${this.isBookmarked(item.id.videoId) ? "primary" : "secondary"}"
+                        appearance="${isBookmarked ? "primary" : "secondary"}"
                         size="small"
                         icon-position="after"
                         @click=${() => this.recordBookmark(item)}

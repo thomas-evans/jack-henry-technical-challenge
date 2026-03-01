@@ -1,0 +1,30 @@
+All of these were actions were taken after the requirements had been met.
+
+I used OpenCode to generate a readme file with some basic documentation about the application.
+I also used OpenCode to search for way to make the code more succinct or efficient:
+
+1. mockData.ts - Reduced from ~1100 lines to ~300 lines:                                                                                                                                                                                                                                                      
+   - Added createThumbnails() helper function                                                                                                                                                                                                                                                                    
+   - Replaced 23 repetitive thumbnail definitions with single-line function calls                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                   
+2. SortResults.ts - Refactored sortResults() method:                                                                                                                                                                                                                                                          
+   - Replaced 45-line switch statement with a comparator factory (lines 46-60)                                                                                                                                                                                                                                   
+   - Changed parseInt() to Number() for simpler type conversion                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                   
+3. YTSearchModule.ts - Cached isBookmarked result:                                                                                                                                                                                                                                                            
+   - Added const isBookmarked = this.isBookmarked(item.id.videoId) at line 147                                                                                                                                                                                                                                   
+   - Reused the cached value in both tooltip label and button appearance (previously called twice per card)
+
+I had OpenCode create some tests as well:
+
+Test Files Created/Updated                                                                                                                                                                                                                                            eslint.config.ts                   +2   
+                                                                                                                                                                                                                                                                           src/SearchPage.test.ts          +7 -6   
+   | File | Tests | Description |                                                                                                                                                                                                                                        src/SearchYT.test.ts              +48   
+   |------|-------|-------------|                                                                                                                                                                                                                                        src/SortResults.test.ts           +65   
+   | SearchYT.test.ts | 7 | Unit tests for default properties, UI tests for rendering search input and button |                                                                                                                                                          src/SortResults.ts            +15 -45   
+   | YTSearchModule.test.ts | 3 | Edge case tests for localStorage handling (corrupted, null, empty data) |                                                                                                                                                              src/YTSearchModule.test.ts        +40   
+   | SortResults.test.ts | 10 | Unit tests for default state, UI tests for sort buttons |                                                                                                                                                                                src/YTSearchModule.ts           +3 -6   
+   | mockData.test.ts | 26 | Tests for mock data structure, consistency between search and stats, edge cases |                                                                                                                                                           src/mockData.test.ts             +179   
+   | SearchPage.test.ts | 3 | Fixed existing tests |     
+
+ADR for State Management created by OpenCode

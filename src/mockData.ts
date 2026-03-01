@@ -1,5 +1,11 @@
 import type { SearchResponse, VideoResponse } from "./types.ts";
 
+const createThumbnails = (videoId: string) => ({
+    default: { url: `https://i.ytimg.com/vi/${videoId}/default.jpg`, width: 120, height: 90 },
+    medium: { url: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`, width: 320, height: 180 },
+    high: { url: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`, width: 480, height: 360 },
+});
+
 export const mockSearch: SearchResponse = {
     kind: "youtube#searchListResponse",
     etag: "t_qnpVMqwhvDnwDI360Az-9xFGA",
@@ -23,23 +29,7 @@ export const mockSearch: SearchResponse = {
                 title: "How To Make Croissants At Home",
                 description:
                     "The perfect croissant is buttery, flaky, fluffy, and irresistible. With a few simple ingredients and patience, you can make the most ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/RgmbV_2FmF8/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/RgmbV_2FmF8/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/RgmbV_2FmF8/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("RgmbV_2FmF8"),
                 channelTitle: "Nick's Kitchen",
                 liveBroadcastContent: "none",
                 publishTime: "2025-12-12T17:00:49Z",
@@ -58,23 +48,7 @@ export const mockSearch: SearchResponse = {
                 title: "How To Make The Best Croissants At Home",
                 description:
                     "Watch More Tasty 101: https://www.youtube.com/playlist?list=PL8zglt-LDl-g6B-VumB3Hv_8EhVFrEVOn These perfect croissants ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/djnNkLi_K6E/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/djnNkLi_K6E/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/djnNkLi_K6E/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("djnNkLi_K6E"),
                 channelTitle: "Tasty",
                 liveBroadcastContent: "none",
                 publishTime: "2022-04-08T17:00:23Z",
@@ -92,23 +66,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UCtYPTM2s0sYbyZWyG_iewUA",
                 title: "Croissant 🥐 #french #funny #viralvideo #trending #shorts",
                 description: "",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/0nHC33ngLeU/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/0nHC33ngLeU/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/0nHC33ngLeU/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("0nHC33ngLeU"),
                 channelTitle: "I have controversial opinions",
                 liveBroadcastContent: "none",
                 publishTime: "2024-12-15T05:17:59Z",
@@ -126,23 +84,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UC6j8I_YskDRSRR0tZ5NQBgg",
                 title: "Easy Homemade Croissant 🥐",
                 description: "",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/gPibdR4GtDI/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/gPibdR4GtDI/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/gPibdR4GtDI/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("gPibdR4GtDI"),
                 channelTitle: "foodzizzles",
                 liveBroadcastContent: "none",
                 publishTime: "2025-04-26T14:38:22Z",
@@ -160,23 +102,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UClQQ-PD3rMT2nyYIn9mQL_Q",
                 title: "FIRST TIME making homemade croissants 🥐 using Claire Saffitz’ recipe!",
                 description: "",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/uMCE2v6qpT8/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/uMCE2v6qpT8/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/uMCE2v6qpT8/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("uMCE2v6qpT8"),
                 channelTitle: "Hello Bake",
                 liveBroadcastContent: "none",
                 publishTime: "2023-08-24T14:32:14Z",
@@ -195,23 +121,7 @@ export const mockSearch: SearchResponse = {
                 title: "It is so easy to make #croissants at home, of course, with some practice Details are in description",
                 description:
                     "Please find detailed instructions on how to make perfect croissants on my website ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/4Kjv7kQF9lE/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/4Kjv7kQF9lE/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/4Kjv7kQF9lE/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("4Kjv7kQF9lE"),
                 channelTitle: "Natashas_Baking",
                 liveBroadcastContent: "none",
                 publishTime: "2023-03-26T23:40:48Z",
@@ -229,23 +139,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UCuEnYlSiPIwtdK3WjrgSkFQ",
                 title: "A strawberry croissant? 🌸 #croissant #pastry #baking #recipe #sourdough",
                 description: "",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/GiN9w2a7wTc/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/GiN9w2a7wTc/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/GiN9w2a7wTc/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("GiN9w2a7wTc"),
                 channelTitle: "Jesha Ann Stevens",
                 liveBroadcastContent: "none",
                 publishTime: "2024-12-17T00:05:17Z",
@@ -264,23 +158,7 @@ export const mockSearch: SearchResponse = {
                 title: "Make Perfect Croissants With Claire Saffitz | Try This at Home | NYT Cooking",
                 description:
                     "Get the recipes: Croissants: https://nyti.ms/2RrNUnL Pain au Chocolat: https://nyti.ms/2RuxP0A Ham and Cheese Croissants: ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/vpwY3nmLLaA/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/vpwY3nmLLaA/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/vpwY3nmLLaA/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("vpwY3nmLLaA"),
                 channelTitle: "NYT Cooking",
                 liveBroadcastContent: "none",
                 publishTime: "2021-05-07T17:00:26Z",
@@ -298,23 +176,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UC0fvGpDXi7sV2hbgD-O47yw",
                 title: "The Croissant to share! 🥐 The perfect breakfast pastry for Sunday brunch! #amauryguichon #croissant",
                 description: "",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/gRxl_6v1Egg/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/gRxl_6v1Egg/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/gRxl_6v1Egg/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("gRxl_6v1Egg"),
                 channelTitle: "Amaury Guichon",
                 liveBroadcastContent: "none",
                 publishTime: "2023-04-06T17:39:35Z",
@@ -332,23 +194,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UCmGShZALa05bKhGsA86ZM2w",
                 title: "NUTELLA CROISSANTS🤩🥐 #shorts",
                 description: "This recipe isn't a WANT its a NEED. #shortsfood.",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/K76tgR-sozo/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/K76tgR-sozo/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/K76tgR-sozo/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("K76tgR-sozo"),
                 channelTitle: "Caught Snackin'",
                 liveBroadcastContent: "none",
                 publishTime: "2022-11-03T16:00:16Z",
@@ -367,23 +213,7 @@ export const mockSearch: SearchResponse = {
                 title: "Homemade Croissants Recipe",
                 description:
                     "My homemade Croissant recipe is a buttery, flaky pastry-lover's dream, especially served warm with a generous smear of butter!",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/l-4hEBgfZxs/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/l-4hEBgfZxs/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/l-4hEBgfZxs/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("l-4hEBgfZxs"),
                 channelTitle: "Preppy Kitchen",
                 liveBroadcastContent: "none",
                 publishTime: "2025-10-09T19:00:42Z",
@@ -402,23 +232,7 @@ export const mockSearch: SearchResponse = {
                 title: "Croissant in Paris vs United States",
                 description:
                     "Have you tried them? Which one do you this is the best croissant? #french #travel.",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/t908lbEPN6A/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/t908lbEPN6A/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/t908lbEPN6A/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("t908lbEPN6A"),
                 channelTitle: "DanCookedIt",
                 liveBroadcastContent: "none",
                 publishTime: "2025-02-21T00:33:04Z",
@@ -437,23 +251,7 @@ export const mockSearch: SearchResponse = {
                 title: "The new way to make croissants that is conquering the world!",
                 description:
                     "The new way to make croissants that is conquering the world! Ingredients milk: 300 ml (10 fl oz) water: 300 ml (10 fl oz) sugar: 120 ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/LAwooNmfr-U/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/LAwooNmfr-U/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/LAwooNmfr-U/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("LAwooNmfr-U"),
                 channelTitle: "Cookrate - Dough Recipes",
                 liveBroadcastContent: "none",
                 publishTime: "2025-09-28T10:05:00Z",
@@ -471,23 +269,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UC0fvGpDXi7sV2hbgD-O47yw",
                 title: "Giant Croissant! 🥐 The making of the croissant from the coffee cup video! #amauryguichon #croissant",
                 description: "",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/EuhQnUQY5ek/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/EuhQnUQY5ek/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/EuhQnUQY5ek/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("EuhQnUQY5ek"),
                 channelTitle: "Amaury Guichon",
                 liveBroadcastContent: "none",
                 publishTime: "2024-09-04T16:56:01Z",
@@ -506,23 +288,7 @@ export const mockSearch: SearchResponse = {
                 title: "I Tried The Best Croissant in The World",
                 description:
                     "There are a lot of croissants here... so we better get to work. Thank you to Eating Europe and Adriana for helping us pull this off.",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/L2ZAZc7sNEs/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/L2ZAZc7sNEs/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/L2ZAZc7sNEs/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("L2ZAZc7sNEs"),
                 channelTitle: "Joshua Weissman",
                 liveBroadcastContent: "none",
                 publishTime: "2024-12-22T15:30:06Z",
@@ -540,23 +306,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UCMpVQVKYRb_xXnevxQjYepQ",
                 title: "I baked perfect croissants #cooking #food #foodasmr #recipe",
                 description: "",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/ANKI177u6_A/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/ANKI177u6_A/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/ANKI177u6_A/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("ANKI177u6_A"),
                 channelTitle: "Louis Gantus",
                 liveBroadcastContent: "none",
                 publishTime: "2023-12-21T19:59:17Z",
@@ -575,23 +325,7 @@ export const mockSearch: SearchResponse = {
                 title: "How To Make Proper Croissants Completely By Hand",
                 description:
                     "This Croissant recipe is about as minimal equipment as you can get in a recipe. It's a no machine, as well as a no knead recipe.",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/hJxaVD6eAtc/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/hJxaVD6eAtc/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/hJxaVD6eAtc/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("hJxaVD6eAtc"),
                 channelTitle: "Joshua Weissman",
                 liveBroadcastContent: "none",
                 publishTime: "2018-11-05T19:45:00Z",
@@ -610,23 +344,7 @@ export const mockSearch: SearchResponse = {
                 title: "What makes a real French croissant?",
                 description:
                     "Croissants are a staple in French pastry. A fresh coffee and a croissant create the perfect breakfast combination. So, how are ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/DzG-0slfnkc/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/DzG-0slfnkc/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/DzG-0slfnkc/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("DzG-0slfnkc"),
                 channelTitle: "DW Food",
                 liveBroadcastContent: "none",
                 publishTime: "2024-01-27T14:00:09Z",
@@ -645,23 +363,7 @@ export const mockSearch: SearchResponse = {
                 title: "How to Make 3 Viral Croissant Recipes (Crookie, Flat Croissant &amp; More) | Allrecipes",
                 description:
                     "Nicole makes three viral TikTok croissant recipes using a $6 box of Costco croissants! Crookie - 0:00 ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/XlenPgYGTm4/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/XlenPgYGTm4/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/XlenPgYGTm4/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("XlenPgYGTm4"),
                 channelTitle: "Allrecipes",
                 liveBroadcastContent: "none",
                 publishTime: "2024-06-27T16:00:29Z",
@@ -680,23 +382,7 @@ export const mockSearch: SearchResponse = {
                 title: "How to Make CROISSANTS Like a Pastry Chef",
                 description:
                     "Croissants are decadent crescents of flakey, crispy, chewy goodness and in many ways, a work of art. They can be enjoyed ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/K4Jwsl6BoHQ/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/K4Jwsl6BoHQ/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/K4Jwsl6BoHQ/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("K4Jwsl6BoHQ"),
                 channelTitle: "Vincenzo's Plate",
                 liveBroadcastContent: "none",
                 publishTime: "2020-11-29T13:00:14Z",
@@ -714,23 +400,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UCbFDOSeFTQjb5nLhe9_6ueg",
                 title: "Bee croissants with honey filling 🐝🍯🥐 #croissant",
                 description: "",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/Y3zqfa2pHAE/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/Y3zqfa2pHAE/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/Y3zqfa2pHAE/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("Y3zqfa2pHAE"),
                 channelTitle: "Rustic bakery",
                 liveBroadcastContent: "none",
                 publishTime: "2025-08-23T07:15:05Z",
@@ -749,23 +419,7 @@ export const mockSearch: SearchResponse = {
                 title: "FLAKEY HOMEMADE CROISSANTS (Beginner Friendly)",
                 description:
                     "Fresh, flakey croissants are the ultimate home bakers reward. These croissants so flakey, buttery, and delicious that you wouldn't ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/mT4cqHc4HqU/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/mT4cqHc4HqU/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/mT4cqHc4HqU/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("mT4cqHc4HqU"),
                 channelTitle: "Brian Lagerstrom ",
                 liveBroadcastContent: "none",
                 publishTime: "2021-07-15T16:00:32Z",
@@ -783,23 +437,7 @@ export const mockSearch: SearchResponse = {
                 channelId: "UCUYiOr24r02GuIFMEjYyuOw",
                 title: "Homemade Pistachio Cream Croissants😋 #food",
                 description: "",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/Dt9sJ1J4Y9g/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/Dt9sJ1J4Y9g/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/Dt9sJ1J4Y9g/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("Dt9sJ1J4Y9g"),
                 channelTitle: "Turkuaz Kitchen",
                 liveBroadcastContent: "none",
                 publishTime: "2025-03-14T15:19:40Z",
@@ -818,23 +456,7 @@ export const mockSearch: SearchResponse = {
                 title: "rolling the croissant 🥐#croissant  #shorts #bake",
                 description:
                     "rolling the croissant #croissant #shorts #bake #bakery #breads #youtubeshorts #ytshorts #roll #croissants Video tags : how to ...",
-                thumbnails: {
-                    default: {
-                        url: "https://i.ytimg.com/vi/0CeQYPom734/default.jpg",
-                        width: 120,
-                        height: 90,
-                    },
-                    medium: {
-                        url: "https://i.ytimg.com/vi/0CeQYPom734/mqdefault.jpg",
-                        width: 320,
-                        height: 180,
-                    },
-                    high: {
-                        url: "https://i.ytimg.com/vi/0CeQYPom734/hqdefault.jpg",
-                        width: 480,
-                        height: 360,
-                    },
-                },
+                thumbnails: createThumbnails("0CeQYPom734"),
                 channelTitle: "Baking Raja",
                 liveBroadcastContent: "none",
                 publishTime: "2023-10-15T12:45:00Z",
